@@ -1,3 +1,4 @@
+// Protects routes from unauthenticated access
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 
