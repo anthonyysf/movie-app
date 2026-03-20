@@ -1,3 +1,4 @@
+// Movie listing page with search, filter, and delete confirmation modal
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
