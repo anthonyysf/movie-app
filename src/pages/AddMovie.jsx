@@ -1,3 +1,4 @@
+// Page for adding a new movie to the Redux store
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
