@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { login } from '../store/authSlice'
 
 function Login() {
   const [email, setEmail] = useState('')
@@ -7,6 +9,7 @@ function Login() {
   const [error, setError] = useState('')
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   function handleLogin() {
     if (email === '' || password === '') {
@@ -17,6 +20,7 @@ function Login() {
       setError('Password must be at least 6 characters')
       return
     }
+    dispatch(login())
     navigate('/movies')
   }
 

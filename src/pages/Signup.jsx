@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { login } from '../store/authSlice'
 
 function Signup() {
   const [name, setName] = useState('')
@@ -9,6 +11,7 @@ function Signup() {
   const [error, setError] = useState('')
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   function handleSignup() {
     if (name === '' || email === '' || password === '' || confirmPassword === '') {
@@ -23,6 +26,7 @@ function Signup() {
       setError('Passwords do not match')
       return
     }
+    dispatch(login())
     navigate('/movies')
   }
 
