@@ -1,9 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom'
-import movies from '../data/movies.json'
+import { useSelector } from 'react-redux'
 
 function MovieDetails() {
   const { id } = useParams()
   const navigate = useNavigate()
+  const movies = useSelector(state => state.movies)
 
   const movie = movies.find(m => m.id === parseInt(id))
 
